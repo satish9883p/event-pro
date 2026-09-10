@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #07090d;
+  color: #f8fafc;
+  @apply antialiased;
+}
+
+/* Dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1016;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff5a5f;
+  border-radius: 999px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-in-out;
+}
+
+/* Utility Classes */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Focus Styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply outline-none ring-2 ring-red-400 ring-offset-2 ring-offset-[#07090d];
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #ff5a5f 0%, #f97316 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #111827 0%, #ff5a5f 100%);
+}
+
+/* Shared visual system: keeps every existing route in the same premium theme. */
+[class~="bg-white"],
+[class~="bg-gray-50"],
+[class~="bg-gray-100"] {
+  background-color: #0d1016 !important;
+}
+
+[class~="bg-gray-900"],
+[class~="bg-gray-800"],
+[class~="bg-gray-700"] {
+  background-color: #11151d !important;
+}
+
+[class~="border-gray-100"],
+[class~="border-gray-200"],
+[class~="border-gray-300"],
+[class~="border-gray-700"],
+[class~="border-gray-800"] {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[class~="text-gray-900"],
+[class~="text-gray-800"],
+[class~="text-gray-700"],
+[class~="text-gray-600"] {
+  color: #e5e7eb !important;
+}
+
+[class~="text-gray-500"],
+[class~="text-gray-400"],
+[class~="text-gray-300"] {
+  color: #94a3b8 !important;
+}
+
+[class~="bg-blue-600"],
+[class~="bg-indigo-600"],
+[class~="bg-purple-600"] {
+  background-color: #ff5a5f !important;
+}
+
+[class~="text-blue-600"],
+[class~="text-blue-500"],
+[class~="text-indigo-600"],
+[class~="text-purple-600"] {
+  color: #ff8a8a !important;
+}
+
+[class~="border-blue-600"],
+[class~="border-blue-500"] {
+  border-color: #ff5a5f !important;
+}
+
+input,
+textarea,
+select {
+  color: #f8fafc;
+  background-color: #11151d;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+}
+
+.premium-card {
+  background: rgba(17, 21, 29, 0.78);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
